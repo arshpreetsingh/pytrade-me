@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from history.views import nn_chart_view, profit_view, optimize_view, c_chart_view
+from history.views import nn_chart_view, profit_view, optimize_view, c_chart_view,start_trade
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^admin/c_charts', c_chart_view),
     url(r'^admin/profit', profit_view),
     url(r'^admin/optimize', optimize_view),
+    url(r'^admin/start_trade', start_trade),
 ]

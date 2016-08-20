@@ -1,0 +1,8 @@
+{% block content %}
+<h1>Start Trade</h1>
+<form role="form" action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Start</button>
+</form>
+{% endblock %}

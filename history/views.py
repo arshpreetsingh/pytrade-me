@@ -2,7 +2,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 from history.models import (
     PredictionTest, Price, Trade, Balance, TradeRecommendation, get_time, PerformanceComp,
     ClassifierTest)
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response,render
 from django.utils import timezone
 import datetime
 from django.db.models import Avg, Max, Min, Sum, Count
@@ -10,7 +10,14 @@ from django.db.models import Avg, Max, Min, Sum, Count
 from chartit import DataPool, Chart, PivotDataPool, PivotChart
 from history.tools import median_value, get_cost_basis
 from django.conf import settings
+from forms import MainForm
 
+
+def start_trade(request):
+	
+    form_class = MainForm
+    return render(request, 'contact.html', {
+        'form': form_class,})
 
 def getify(dic):
     st = str()
