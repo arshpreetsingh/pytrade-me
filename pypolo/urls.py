@@ -16,13 +16,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from history.views import nn_chart_view, profit_view, optimize_view, c_chart_view,start_trade
+from history.views import nn_chart_view, profit_view, optimize_view, c_chart_view,start_trade,buy_sell
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^admin/buy_sell', buy_sell),
     url(r'^admin/nn_charts', nn_chart_view),
     url(r'^admin/c_charts', c_chart_view),
     url(r'^admin/profit', profit_view),
     url(r'^admin/optimize', optimize_view),
-    url(r'^admin/start_trade', start_trade),
+    url(r'^start_trade', start_trade),
 ]

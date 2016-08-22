@@ -2,10 +2,13 @@
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-MAKE_TRADES = False
+MAKE_TRADES = True
 
-API_KEY = os.environ['POLONIEX_API_KEY']
-API_SECRET = os.environ['POLONIEX_API_SECRET']
+API_KEY = t7KRwZY8fbPCJ9L5pGABo7rzhr7P419MXvmrMmewhLk
+
+#4K1C2QqW50j6VCMTGmd1hPAM2GG8uxyaN5TcmYIcvv5
+API_SECRET = 4K1C2QqW50j6VCMTGmd1hPAM2GG8uxyaN5TcmYIcvv5
+
 
 
 DATABASES = {

@@ -16,53 +16,8 @@ from forms import MainForm
 def start_trade(request):
 	
     form_class = MainForm
-    m = form_class.clean
-    print m
-    return render(request, 'buy_sell.html', {
+    return render(request, 'contact.html', {
         'form': form_class,})
-
-from bitfine import strategy,getDiff,auto_order_buy,auto_order_sell
-
-def main_call():
-	while True:
-	    yield strategy(getDiff('btcusd',8)) # here I have to pass quantity and choice made by user
-
-def ignore_negative(x):
-    if x < 0:
-        return False
-    else:
-        print("+ve") # here have to execute buy function
-        return True
-
-def ignore_positive(x):
-    if x > 0:
-        return False
-    else:
-        print("-ve") # here have to execute sell function
-        return True
-
-def ignore_nothing(x):
-    if x==0:
-        print("zero")
-    return False 
-
-def buy_sell(request):
-    try:
-        TABLE = { # current state: next state
-        ignore_negative: ignore_positive,ignore_positive: ignore_nothing,} 
-        state = ignore_negative  # DON'T call the function yet
-        for value in main_call():
-             if state(value):
-                 print("changing state")
-                 state = TABLE[state] 
-    except:
-        pass
-
-# now have to create function or get one that alreay we have and 
-# execute that one from Start button so we will be able to call that
-
-
-
 
 def getify(dic):
     st = str()
